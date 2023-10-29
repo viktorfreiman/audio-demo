@@ -15,6 +15,7 @@ const rtAudio = new RtAudio(RtAudioApi.WINDOWS_WASAPI);
 
 // vtest
 const frameSize = 2;
+value = 0;
 
 rtAudio.openStream(null, {deviceId: 139, nChannels: 1, firstChannel: 0}, RtAudioFormat.RTAUDIO_SINT16, 48000, frameSize, "MyStream", (pcm) => {
     // console.log("pcm: ", pcm);
@@ -25,9 +26,15 @@ rtAudio.openStream(null, {deviceId: 139, nChannels: 1, firstChannel: 0}, RtAudio
     if (frame !== undefined) {
         // console.log("Frame: ", frame);
         // console.log(frame.hours + ":" + frame.minutes + ":" + frame.seconds + ":" + frame.frames)
-        process.stdout.write(frame.hours + ":" + frame.minutes + ":" + frame.seconds + ":" + frame.frames + "\n")
+        // process.stdout.write(frame.hours + ":" + frame.minutes + ":" + frame.seconds + ":" + frame.frames + "\n")
+        // process.stdout.write("ms: " + tc_ms(frame) + "\n")
+        value = tc_ms(frame);
     }
 });
+
+setInterval(() => {
+    console.log("value: ", value);
+}, 1000);   
 
 // rtAudio.openStream(null, {deviceId: 137, nChannels: 1, firstChannel: 0}, RtAudioFormat.RTAUDIO_SINT16, 48000, frameSize, "MyStream", (pcm) => ltc_handle(pcm), (fd) => f_done(fd));
 rtAudio.start();
@@ -49,3 +56,7 @@ setTimeout(() => {
 // let f_done = function(fd) {
 //     console.log("done: ", fd);
 // }
+
+let tc_ms = function(frame) {
+    return (frame.hours * 3600000) + (frame.minutes * 60000) + (frame.seconds * 1000) + (frame.frames * 40);
+}
