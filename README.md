@@ -8,6 +8,9 @@ I am using VB-Cable to help route the audio. <https://vb-audio.com/Cable/>
 I am using piXtimecode to verify LTC. <https://apps.microsoft.com/detail/9MT05F4N77XZ>  
 Generate LTC from <https://elteesee.pehrhovey.net/>  
 
+Using <https://github.com/bitfocus/libltc-wrapper> to parse LTC.  
+Using <https://github.com/almoghamdani/audify> to handle audio.  
+
 ```mermaid
 graph LR;
   id0-0[mpv] --> id1;
@@ -37,11 +40,12 @@ List of detected audio devices:
 
 ```
 
-To get deviceId run list_dev.js
+To get deviceId run `list_dev.js`  
+`gen.js` generates LTC audio based on wallclock time.  
+`read.js` reads audio from device and prints out LTC timecode.  
 
 Big help from <https://github.com/philhartung/aes67-sender>
 and <https://github.com/philhartung/aes67-monitor> on how to get audio working.
-
 
 works with node v14.15.4 and windows.
 
