@@ -40,6 +40,8 @@ List of detected audio devices:
 
 ```
 
+NOTE: you need to set the correct deviceId for your system in both `gen.js` and `read.js`.
+
 To get deviceId run `list_dev.js`  
 `gen.js` generates LTC audio based on wallclock time.  
 `read.js` reads audio from device and prints out LTC timecode.  
