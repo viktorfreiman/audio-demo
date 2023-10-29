@@ -5,17 +5,8 @@ const decoder = new LTCDecoder(48000, 25, "s16", 2);
 
 const rtAudio = new RtAudio(RtAudioApi.WINDOWS_WASAPI);
 
-// // default 
-// const frameSize = 1920;
-// // aes67
-// const frameSize = 48;
-
-// // vtest
-// const frameSize = 3840;
-
-// vtest
 const frameSize = 2;
-value = 0;
+// value = 0;
 
 rtAudio.openStream(null, {deviceId: 139, nChannels: 1, firstChannel: 0}, RtAudioFormat.RTAUDIO_SINT16, 48000, frameSize, "MyStream", (pcm) => {
     // console.log("pcm: ", pcm);
@@ -26,15 +17,15 @@ rtAudio.openStream(null, {deviceId: 139, nChannels: 1, firstChannel: 0}, RtAudio
     if (frame !== undefined) {
         // console.log("Frame: ", frame);
         // console.log(frame.hours + ":" + frame.minutes + ":" + frame.seconds + ":" + frame.frames)
-        // process.stdout.write(frame.hours + ":" + frame.minutes + ":" + frame.seconds + ":" + frame.frames + "\n")
+        process.stdout.write(frame.hours + ":" + frame.minutes + ":" + frame.seconds + ":" + frame.frames + "\n")
         // process.stdout.write("ms: " + tc_ms(frame) + "\n")
         value = tc_ms(frame);
     }
 });
 
-setInterval(() => {
-    console.log("value: ", value);
-}, 1000);   
+// setInterval(() => {
+//     console.log("value: ", value);
+// }, 1000);   
 
 // rtAudio.openStream(null, {deviceId: 137, nChannels: 1, firstChannel: 0}, RtAudioFormat.RTAUDIO_SINT16, 48000, frameSize, "MyStream", (pcm) => ltc_handle(pcm), (fd) => f_done(fd));
 rtAudio.start();
