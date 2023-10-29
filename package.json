@@ -1,0 +1,23 @@
+{
+  "name": "audio-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viktorfreiman/audio-demo.git"
+  },
+  "author": "Viktor Freiman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viktorfreiman/audio-demo/issues"
+  },
+  "homepage": "https://github.com/viktorfreiman/audio-demo#readme",
+  "dependencies": {
+    "audify": "^1.8.2",
+    "libltc-wrapper": "^1.1.2"
+  }
+}
