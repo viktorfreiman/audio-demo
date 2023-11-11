@@ -8,7 +8,7 @@ const rtAudio = new RtAudio(RtAudioApi.WINDOWS_WASAPI);
 const frameSize = 2;
 // value = 0;
 
-rtAudio.openStream(null, {deviceId: 139, nChannels: 1, firstChannel: 0}, RtAudioFormat.RTAUDIO_SINT16, 48000, frameSize, "MyStream", (pcm) => {
+rtAudio.openStream(null, {deviceId: 136, nChannels: 1, firstChannel: 0}, RtAudioFormat.RTAUDIO_SINT16, 48000, frameSize, "MyStream", (pcm) => {
     // console.log("pcm: ", pcm);
     // process.stdout.write("pcm: " + pcm);
     decoder.write(pcm);

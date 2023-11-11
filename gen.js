@@ -18,7 +18,7 @@ encoder.setTimecode({
 
 const rtAudio = new RtAudio(RtAudioApi.WINDOWS_WASAPI);
 
-rtAudio.openStream({ deviceId: 131, nChannels: 1, firstChannel: 0 }, null, RtAudioFormat.RTAUDIO_SINT8, 48000, 1920, "MyStream");
+rtAudio.openStream({ deviceId: 130, nChannels: 1, firstChannel: 0 }, null, RtAudioFormat.RTAUDIO_SINT8, 48000, 1920, "MyStream");
 
 rtAudio.start();
 
