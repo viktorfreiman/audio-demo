@@ -18,6 +18,7 @@
   "homepage": "https://github.com/viktorfreiman/audio-demo#readme",
   "dependencies": {
     "audify": "^1.8.2",
+    "easymidi": "^3.1.0",
     "libltc-wrapper": "^1.1.2"
   }
 }
