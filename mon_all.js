@@ -6,6 +6,7 @@ easymidi.getInputs().forEach((inputName) => {
     const input = new easymidi.Input(inputName);
     input.on('message', (msg) => {
       const vals = Object.keys(msg).map((key) => `${key}: ${msg[key]}`);
-      console.log(`${inputName}: ${vals.join(', ')}`);
+      date = new Date();
+      console.log(`${date.getSeconds()}.${date.getMilliseconds()} ${inputName}: ${vals.join(', ')}`);
     });
   });
