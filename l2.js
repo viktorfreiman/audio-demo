@@ -43,6 +43,7 @@ setInterval(() => {
 
     var timecode = h + ":" + p_m + ":" + p_s + "." + frame;
     console.log(timecode);
+    console.log("odd: " + odd)
     // console.log("sleep " + msframe);
     setTimeout(() => {
         // 0 // 4
